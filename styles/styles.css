@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0
+}
+
+.grid{
+    display:grid;
+    grid-template-areas:
+    "title nav nav nav"
+    "none content content  none"
+    "footer footer footer footer"; 
+    grid-template-rows: 17% auto 17%;
+    grid-template-columns: auto;
+    grid-column-gap: 10 px;
+    justify-items: stretch;
+    justify-content: space-evenly;
+
+}
+
+.general{
+    background-color: black;
+    color:aliceblue;
+}
+
+.header__general{
+    display:inline-flex;
+    flex-direction: row;
+
+}.header__title{
+    grid-area: title;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.header__navbar{
+    grid-area: nav;
+    padding:20px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header__navbar__ul{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: justify;
+}
+
+.header__navbar__ul__li{
+    display:inline-block;
+    margin-left: 20px;
+    margin-right:20px;
+}
+
+.a{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+a:link{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+a:active{
+    color:aliceblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+
+.main__general{
+    padding: 50px;
+    align-content: center;
+}
+.main__title{
+    font-family: 'League Gothic', sans-serif;
+    font-size: 100px;
+    font-weight: bolder;
+}
+
+.main__p{
+    padding: 50px;
+    text-align: right;
+    text-justify: newspaper;
+}
+.main__image{
+    border-radius: 50%;
+    
+}
+.main__tagline{
+    font-family: 'The Nautigal', cursive;
+    font-size: xx-large;
+}
+
+.card{
+    grid-area: content;
+    box-shadow: 0 4px 8px 0 aquamarine;
+    border-radius: 5px;
+    width: 20%;
+    height: 20%;
+    object-fit:cover;
+}
+
+.card:hover {
+    size: 50%;
+    transition: 0.5seg;
+}
+
+.card__img{
+    object-fit: cover;
+    height: 200px;
+    width: 150px;
+    justify-self: center;
+
+}
+.card__container{
+    padding: 20px 20px 20px 20 px ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.footer__general{
+    grid-area: footer;
+    color:aliceblue
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poller+One&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+    <title>The Mixologists</title>
+</head>
+
+<body class="general">
+    <header class="header__general">  
+        <a href="../index.html" class="header__title a"> The mixologists</a>
+        <nav class="header__navbar">
+            <ul class="header__navbar__ul">
+                <li class="header__navbar__ul__li a"><a href="quienessomos.html"> Quiénes Somos</a></li>
+                <li class="header__navbar__ul__li a"><a href="paquetes.html"> Paquetes</a></li>
+                <li class="header__navbar__ul__li a"><a href="media.html"> Media</a></li>
+                <li class="header__navbar__ul__li a"><a href="contacto.html"> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1 class="main__title"> Contacto</h1>
+        <form action="">
+            <fieldset>
+                <legend> Datos de Contacto </legend>
+                <label for="nombre"> Nombre:</label>
+                <input type="text" name="nombre">
+                <label for="numero"> Teléfono:</label>
+                <input type="text" name="numero">
+            </fieldset>
+            <fieldset>
+                <Legend> Datos del Evento </Legend>
+                <label for="evento"> Evento: </label>
+                <select name="evento" id="">
+                <option value="cumpleañosAdulto"> Cumpleaños Adulto </option>
+                <option value="cumpleañosInfantil"> Cumpleaños Infantil </option> 
+                <option value="boda"> Boda </option>
+                <option value="graduacion"> Graduación </option>   
+                <option value="xv"> XV Años </option>
+                <option value="desayuno"> Desayuno </option>
+                <option value="otro"> Otros </option>
+                </select>
+                <label for="invitados"> Invitados: </label>
+                <select name="Invitados" id="">
+                <option value="15a20"> 15 - 20 </option>
+                <option value="25a40"> 25 - 40 </option> 
+                <option value="50a70"> 50 - 70 </option>
+                <option value="70a100"> 70 - 100 </option>   
+                <option value="100+"> Más de 100 </option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Enviar formulario"/>
+            <input type="reset" value="Limpiar formulario"/>
+        </form>
+    </main>
+
+    <footer>
+       <!-- Este negocio es ficticio, por eso faltan los enlaces absolutos-->
+       <a href=""></a><img src="../images/icons/facebook.png" alt="Facebook">
+       <a href=""></a> <img src="../images/icons/instagram.png" alt="Instagram">
+       <a href=""></a> <img src="../images/icons/tiktok.png" alt="TikTok">
+       <a href=""></a><img src="../images/iconswhatsapp.png" alt="Whatsapp">
+    </footer>
+</body>
+</html>
