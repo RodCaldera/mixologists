@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;500&family=League+Gothic&family=Monoton&family=Poller+One&family=The+Nautigal:wght@400;700&display=swap');
+$title_font: 'Cormorant SC', serif;
+
+*{
+    margin:0;
+    padding:0
+}
+
+
+
+@media screen and (max-width 480px) {
+    #grid{
+        grid-template-rows: 17% auto 17%;
+        grid-template-columns: auto;
+        grid-template-areas:
+        "title title title"
+        "nav nav nav"
+        "content content content"
+        "footer footer footer"; 
+        grid-column-gap: 10 px;
+        justify-items: center;
+        justify-content: space-evenly;
+    }
+    
+}
+
+@media screen and (max-width 768px) {
+    #grid{
+        grid-template-areas:
+        "title nav nav nav"
+        "none content content none"
+        "footer footer footer footer";
+        grid-template-rows: 17% auto 17%;
+        grid-template-columns: auto;
+        grid-column-gap: 10 px;
+        justify-items: stretch;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width 1200px) {
+    #grid{
+        grid-template-areas:
+        "title title title" 
+        "nav nav nav"
+        "none content none"
+        "footer footer footer";
+        grid-template-rows: 17% auto 17%;
+        grid-template-columns: auto;
+        grid-column-gap: 20 px;
+        justify-items: stretch;
+        justify-content: space-evenly;
+    }
+}
+
+.general{
+    background-color: #FF3CAC;
+    background: linear-gradient(to top, #42275a, #734b6d);
+    color:aliceblue;
+}
+
+.header {    
+    display:inline-flex;
+    flex-direction: row;
+}
+    p {
+    grid-area: title;
+    padding: 20px;
+    font-family: $title_font;
+    font-weight: bold;
+    font-size: larger;
+    }
+    .nav {
+    grid-area: nav;
+    padding:20px; 
+    font-family: 'Cormorant SC', serif;
+    font-size: medium;
+    text-align: center;
+    
+        ul {
+            list-style-type: none;
+            text-decoration: none;
+            text-align: justify;
+        
+            li {
+            display:inline-block;
+            margin-left: 20px;
+            margin-right:20px;
+           }
+
+        }
+        
+    }
+ 
+
+.a{
+    color:aliceblue;
+    text-decoration: none;   
+    
+    &:link{
+    color:aliceblue;
+    text-decoration: none;
+    }
+
+    &:hover{
+    font-weight: bold;
+    }
+
+    a:active{
+    color:aliceblue;
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    a:visited{
+    color:aliceblue;
+    text-decoration: none;
+    }
+}
+
+.main__general{
+    grid-area: content;
+    padding: 50px;
+    align-content: center;
+}
+
+.index__cover{
+    display: flex;
+    height: 250px;
+    width: 250 px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    text-justify: center;
+    background-image: url("../images/photos/cover.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    
+}
+.main__title{
+    font-family: 'League Gothic', sans-serif;
+    font-size: 60px;
+    text-shadow: 0px 4px 3px coral,
+             0px 8px 13px purple,
+             0px 18px 23px rgba(0,0,0,0.1);
+    transform: translateZ(60px);
+}
+
+.main__p{
+    padding: 50px;
+    text-align: right;
+    text-justify: newspaper;
+}
+.main__image{
+    border-radius: 50%;
+    
+}
+.main__tagline{
+    font-family: 'The Nautigal', cursive;
+    font-size: xx-large;
+}
+
+.container__card{
+    grid-area: content;
+    display:inline-flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    perspective: 1000px;
+    display: flex;
+    align-content: space-between;
+    
+}
+
+.card__father{
+    margin: auto;
+    width:350px;
+    height: 400px;
+}
+
+.card__father:hover .card{
+    transform: rotateY(180deg);
+}
+
+.card{
+    width:350px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 aquamarine;
+    
+}
+
+
+.card__front, 
+.card__back{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border-radius: 30px;
+  
+}
+
+.card__front{
+    width: 100%;
+    height:100%;
+    
+}
+
+.card__back{
+    transform: rotateY(180deg);
+    background: black;
+    padding: 40px;
+    text-align: center;
+}
+
+
+.body__card_front{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 40 px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body__card_back{
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.card{
+    grid-area: content;
+    
+    width: 20%;
+    height: 20%;
+    object-fit:cover;
+}
+
+.card:hover {
+    size: 50%;
+    transition: 0.5seg;
+}
+
+.card__img{
+    object-fit: cover;
+    height: 200px;
+    width: 150px;
+    justify-self: center;
+
+}
+.card__container{
+    padding: 20px 20px 20px 20 px ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.footer__general{
+    grid-area: footer;
+    color:aliceblue;
+}
