@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;500&family=League+Gothic&family=Monoton&family=Poller+One&family=The+Nautigal:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
-@media screen and (max-width 480px) {
+@media screen and (max-width: 480px) {
   #grid {
     grid-template-rows: 17% auto 17%;
     grid-template-columns: auto;
@@ -13,7 +14,7 @@
     justify-content: space-evenly;
   }
 }
-@media screen and (max-width 768px) {
+@media screen and (max-width: 768px) {
   #grid {
     grid-template-areas: "title nav nav nav" "none content content none" "footer footer footer footer";
     grid-template-rows: 17% auto 17%;
@@ -23,7 +24,7 @@
     justify-content: space-evenly;
   }
 }
-@media screen and (max-width 1200px) {
+@media screen and (max-width: 1200px) {
   #grid {
     grid-template-areas: "title title title" "nav nav nav" "none content none" "footer footer footer";
     grid-template-rows: 17% auto 17%;
@@ -43,26 +44,27 @@
   display: inline-flex;
   flex-direction: row;
 }
-.header title {
+.header__title {
   grid-area: title;
   padding: 20px;
   font-family: "Cormorant SC", serif;
   font-weight: bold;
   font-size: larger;
 }
-.header .navbar {
+.header__navbar {
   grid-area: nav;
   padding: 20px;
   font-family: "Cormorant SC", serif;
   font-size: medium;
   text-align: center;
 }
-.header ul {
+.header__navbar__ul {
   list-style-type: none;
   text-decoration: none;
   text-align: justify;
+  display: inline-block;
 }
-.header li {
+.header__navbar__ul__li {
   display: inline-block;
   margin-left: 20px;
   margin-right: 20px;

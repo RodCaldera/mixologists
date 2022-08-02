@@ -6,9 +6,7 @@ $title_font: 'Cormorant SC', serif;
     padding:0
 }
 
-
-
-@media screen and (max-width 480px) {
+@media screen and (max-width: 480px) {
     #grid{
         grid-template-rows: 17% auto 17%;
         grid-template-columns: auto;
@@ -20,11 +18,10 @@ $title_font: 'Cormorant SC', serif;
         grid-column-gap: 10 px;
         justify-items: center;
         justify-content: space-evenly;
-    }
-    
+    }   
 }
 
-@media screen and (max-width 768px) {
+@media screen and (max-width: 768px) {
     #grid{
         grid-template-areas:
         "title nav nav nav"
@@ -38,7 +35,7 @@ $title_font: 'Cormorant SC', serif;
     }
 }
 
-@media screen and (max-width 1200px) {
+@media screen and (max-width: 1200px) {
     #grid{
         grid-template-areas:
         "title title title" 
@@ -62,35 +59,38 @@ $title_font: 'Cormorant SC', serif;
 .header {    
     display:inline-flex;
     flex-direction: row;
-}
-    p {
+    
+    &__title{ 
     grid-area: title;
     padding: 20px;
     font-family: $title_font;
     font-weight: bold;
     font-size: larger;
     }
-    .nav {
+
+    &__navbar {
     grid-area: nav;
     padding:20px; 
     font-family: 'Cormorant SC', serif;
     font-size: medium;
     text-align: center;
     
-        ul {
+        &__ul {
             list-style-type: none;
             text-decoration: none;
             text-align: justify;
+            display:inline-block;
         
-            li {
+            &__li {
             display:inline-block;
             margin-left: 20px;
             margin-right:20px;
            }
-
         }
-        
     }
+}
+        
+    
  
 
 .a{
