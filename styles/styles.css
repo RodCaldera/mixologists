@@ -91,10 +91,25 @@
   text-decoration: none;
 }
 
-.main__general {
+.main {
   grid-area: content;
   padding: 50px;
   align-content: center;
+}
+.main__title {
+  font-family: "League Gothic", sans-serif;
+  font-size: 60px;
+  text-shadow: 0px 4px 3px coral, 0px 8px 13px purple, 0px 18px 23px rgba(0, 0, 0, 0.1);
+  transform: translateZ(60px);
+}
+.main__p {
+  padding: 50px;
+  text-align: right;
+  text-justify: newspaper;
+}
+.main__tagline {
+  font-family: "The Nautigal", cursive;
+  font-size: xx-large;
 }
 
 .index__cover {
@@ -108,29 +123,13 @@
   background-image: url("../images/photos/cover.jpeg");
   background-position: center center;
   background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
-}
-
-.main__title {
-  font-family: "League Gothic", sans-serif;
-  font-size: 60px;
-  text-shadow: 0px 4px 3px coral, 0px 8px 13px purple, 0px 18px 23px rgba(0, 0, 0, 0.1);
-  transform: translateZ(60px);
-}
-
-.main__p {
-  padding: 50px;
-  text-align: right;
-  text-justify: newspaper;
 }
 
 .main__image {
   border-radius: 50%;
-}
-
-.main__tagline {
-  font-family: "The Nautigal", cursive;
-  font-size: xx-large;
 }
 
 .container__card {
@@ -141,6 +140,7 @@
   margin: auto;
   margin-top: 100px;
   perspective: 1000px;
+  padding: 10% 10% 10% 10%;
   display: flex;
   align-content: space-between;
 }
@@ -202,12 +202,18 @@
 .body__card_back {
   margin-top: 30px;
   font-size: 18px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 40 px;
 }
 
 .card {
   grid-area: content;
   width: 20%;
-  height: 20%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -217,7 +223,7 @@
   transition: 0.5seg;
 }
 
-.card__img {
+.card__front_img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 200px;
@@ -226,12 +232,38 @@
 }
 
 .card__container {
-  padding: 20px 20px 20px 20 px;
+  padding: 20px 20px 20px 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: medium;
+}
+
+.form {
+  font-family: "Cormorant SC", serif;
+  font-weight: bold;
+  line-height: 40px;
+  margin: 30px;
+  padding: 30px;
+  align-content: space-between;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.form__fieldset {
+  text-align: center;
+}
+.form__button {
+  background-color: #2d3436;
+  background-image: radial-gradient(#2d3436, #000000);
+  font-family: "Cormorant SC", serif;
+  font-size: medium;
+  font-weight: bold;
+  color: thistle;
+  padding: 10px;
+  border-radius: 30px;
 }
 
 .footer__general {
   grid-area: footer;
   color: aliceblue;
+  text-align: right;
 }/*# sourceMappingURL=styles.css.map */
