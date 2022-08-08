@@ -3,62 +3,34 @@ $title_font: 'Cormorant SC', serif;
 
 *{
     margin:0;
-    padding:0
+    padding:0;
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 480px) {
-    #grid{
-        grid-template-rows: 17% auto 17%;
-        grid-template-columns: auto;
-        grid-template-areas:
-        "title title title"
-        "nav nav nav"
-        "content content content"
-        "footer footer footer"; 
-        grid-column-gap: 10 px;
-        justify-items: center;
-        justify-content: space-evenly;
-    }   
-}
+$palette:(
+    updown: #32174d,
+    background: linear-gradient(to bottom right, #42275a, #734b6d, #fb7ba2),
+    font: aliceblue,
+    button: #50404d);
 
-@media screen and (max-width: 768px) {
-    #grid{
-        grid-template-areas:
-        "title nav nav nav"
-        "none content content none"
-        "footer footer footer footer";
-        grid-template-rows: 17% auto 17%;
-        grid-template-columns: auto;
-        grid-column-gap: 10 px;
-        justify-items: stretch;
-        justify-content: space-evenly;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    #grid{
-        grid-template-areas:
-        "title title title" 
-        "nav nav nav"
-        "none content none"
-        "footer footer footer";
-        grid-template-rows: 17% auto 17%;
-        grid-template-columns: auto;
-        grid-column-gap: 20 px;
-        justify-items: stretch;
-        justify-content: space-evenly;
-    }
+@mixin textFormat{
+    text-align: center;
+    text-justify: newspaper;
 }
 
 .general{
     background-color: #FF3CAC;
-    background: linear-gradient(to top, #42275a, #734b6d);
-    color:aliceblue;
+    background: map-get($palette, background);
+    color: map-get($palette, font);
 }
 
 .header {    
     display:inline-flex;
     flex-direction: row;
+    
+    &__general{
+        background-color: map-get($palette, updown);
+    }
     
     &__title{ 
     grid-area: title;
@@ -91,11 +63,11 @@ $title_font: 'Cormorant SC', serif;
 } 
  
 .a{
-    color:aliceblue;
+    color: map-get($palette, font);
     text-decoration: none;   
     
     &:link{
-    color:aliceblue;
+    color:map-get($palette, font);
     text-decoration: none;
     }
 
@@ -104,13 +76,13 @@ $title_font: 'Cormorant SC', serif;
     }
 
     a:active{
-    color:aliceblue;
+    color:map-get($palette, font);
     text-decoration: none;
     font-weight: bold;
     }
 
     a:visited{
-    color:aliceblue;
+    color:map-get($palette, font);
     text-decoration: none;
     }
 }
@@ -155,6 +127,23 @@ $title_font: 'Cormorant SC', serif;
     object-fit: cover;
     border-radius: 50%;
 }    
+
+
+.info{
+    display:flex;
+    flex-direction: column;
+    wrap: wrap;
+
+    &__header{
+        @include textFormat;
+        width:100%;
+        font-family: $title_font; 
+    }
+    &__p{
+        @include textFormat;
+        width: 100%;
+    }
+}
 
 .main__image{
     border-radius: 50%;    
@@ -269,32 +258,124 @@ $title_font: 'Cormorant SC', serif;
     font-family: $title_font;
     font-weight: bold;
     line-height: 40px;
-    margin: 30px;
-    padding: 30px;
-    align-content: space-between;
-    justify-content: center;
-    display:flex;
-    flex-direction: column;
 
     &__fieldset{
         text-align: center;
+        display:flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: center;
+        margin: 30px;
+        padding: 30px;
+
+        &__input{
+            width: 75%;
+            align-self: center;
+        }
+
+        &__cliente{
+            @extend .form__fieldset;
+            background-color: #32174d;
+        }
+
+        &__evento{
+            @extend .form__fieldset;
+            background-color:#734b6d; 
+        }
     }
 
     &__button{
-        background-color: #2d3436;
-        background-image: radial-gradient(#2d3436, #000000);
+        background-color: map-get($palette, button);
+        width: 80%;
         font-family: $title_font;
         font-size: medium;
         font-weight: bold;
-        color:thistle;
+        color:map-get($palette, font);
+        margin-top: 30px;
         padding: 10px;
         border-radius: 30px;
+        align-self: center;
     }
-
 }
 
 .footer__general{
     grid-area: footer;
-    color:aliceblue;
-    text-align: right;
+    color: map-get($palette, font);
+    background-color: map-get($palette, updown);
+    text-align: center;
+
+}
+
+@media screen and (max-width: 600px) {
+    #grid{
+        grid-template-rows: 17% auto 17%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+        "title"
+        "nav"
+        "content"
+        "header"
+        "info"
+        "footer"; 
+        grid-column-gap: 10 px;
+        justify-items: center;
+        justify-content: space-evenly;
+    }   
+    .info{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #grid{
+        grid-template-areas:
+            "title"
+            "nav"
+            "content"
+            "header"
+            "p"
+            "footer";
+        grid-template-rows: 17% auto auto auto 17%;
+        grid-template-columns: auto;
+        grid-column-gap: 10 px;
+        justify-items: stretch;
+        justify-content: space-evenly;
+    }
+    
+    .info{
+        display:flex;
+        flex-direction: column;
+        
+        &__header{
+            width:100%;
+            grid-area: header;
+        }
+    
+        &__p{
+        width:100%;
+        grid-area: p;
+        }
+    }
+
+    .card__father{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #grid{
+        grid-template-areas:
+        "title title title" 
+        "nav nav nav"
+        "none content none"
+        "footer footer footer";
+        grid-template-rows: 17% auto 17%;
+        grid-template-columns: auto;
+        grid-column-gap: 20 px;
+        justify-items: stretch;
+        justify-content: space-evenly;
+    }
 }

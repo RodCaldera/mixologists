@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Mixologists ofrece coctelería para tu evento. Pide informes, haz una cotización, contacta a un asesor.">
     <link rel="stylesheet" href="../styles/styles.css">
     <script src="https://kit.fontawesome.com/4fb4dc460b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;500&family=League+Gothic&family=Poller+One&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
-    <title>The Mixologists</title>
+    <title>The Mixologists - Formulario de Contacto</title>
 </head>
 
 <body class="general">
@@ -28,17 +29,19 @@
     <main>
         <h1 class="main__title"> Contacto</h1>
         <form class="form" action="">
-            <fieldset class="form__fieldset">
+            <fieldset class="form__fieldset form__fieldset__cliente">
                 <legend> Datos de Contacto </legend>
                 <label for="nombre"> Nombre:</label>
-                <input type="text" name="nombre">
+                <input class="form__fieldset__input" type="text" name="nombre">
                 <label for="numero"> Teléfono:</label>
-                <input type="text" name="numero">
+                <input class="form__fieldset__input" type="text" name="numero">
+                <label for="correo"> Email</label>
+                <input class="form__fieldset__input" type="text" name="correo">
             </fieldset>
-            <fieldset class="form__fieldset">
+            <fieldset class="form__fieldset form__fieldset__evento">
                 <Legend> Datos del Evento </Legend>
                 <label for="evento"> Evento: </label>
-                <select name="evento" id="">
+                <select class="form__fieldset__input" name="evento" id="">
                 <option value="cumpleañosAdulto"> Cumpleaños Adulto </option>
                 <option value="cumpleañosInfantil"> Cumpleaños Infantil </option> 
                 <option value="boda"> Boda </option>
@@ -48,7 +51,7 @@
                 <option value="otro"> Otros </option>
                 </select>
                 <label for="invitados"> Invitados: </label>
-                <select name="Invitados" id="">
+                <select class="form__fieldset__input" name="Invitados" id="">
                 <option value="15a20"> 15 - 20 </option>
                 <option value="25a40"> 25 - 40 </option> 
                 <option value="50a70"> 50 - 70 </option>
@@ -58,10 +61,11 @@
             </fieldset>
             <input class="form__button" type="submit" value="Enviar formulario"/>
             <input class="form__button" type="reset" value="Limpiar formulario"/>
+            <input class="form__button" type="reset" value="Quiero ser contactado">
         </form>
     </main>
 
-    <footer>
+    <footer class="footer__general">
        <!-- Este negocio es ficticio, por eso faltan los enlaces absolutos-->
        <a href=""></a><i class="fa-brands fa-facebook-square"></i>
        <a href=""></a> <i class="fa-brands fa-instagram-square"></i>
