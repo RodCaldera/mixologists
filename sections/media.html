@@ -31,31 +31,41 @@
     <main>
         <div>  
             <h1 class="main__title">Cocteles para Tu Evento</h1>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Lq7NtTfMhLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="videoplayer">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Lq7NtTfMhLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>    
         </div>
     <!-- Aquí puse el carrusel con Bootstrap--> 
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="../images/photos/party.jfif" class="d-block w-100" alt="Fiesta de Cocteles">
+        <div class="carouselwrap">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="../images/photos/party.jfif" class="d-block w-100" alt="Fiesta de Cocteles">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../images/photos/cantaritos.jpg" class="d-block w-100" alt="Cantaritos en tu Reunión">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../images/photos/froze.jpg" class="d-block w-100" alt="Frozé de Bienvenida">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                <img src="../images/photos/cantaritos.jpg" class="d-block w-100" alt="Cantaritos en tu Reunión">
-                </div>
-                <div class="carousel-item">
-                <img src="../images/photos/froze.jpg" class="d-block w-100" alt="Frozé de Bienvenida">
-                </div>
-            </div>
         </div>
         </div>      
     </main>
 
     <footer>
-        <!-- Este negocio es ficticio, por eso faltan los enlaces absolutos-->
-        <a href=""></a><i class="fa-brands fa-facebook-square"></i>
-        <a href=""></a> <i class="fa-brands fa-instagram-square"></i>
-        <a href=""></a> <i class="fa-brands fa-tiktok"></i>
-        <a href=""></a><i class="fa-brands fa-whatsapp-square"></i>
+        <div class="footer__general">
+            <div>
+                <p> Síguenos en</p>
+                <a href=""></a><i class="fa-brands fa-facebook-square"></i>
+                <a href=""></a> <i class="fa-brands fa-instagram-square"></i>
+                <a href=""></a> <i class="fa-brands fa-tiktok"></i>
+                <a href=""></a><i class="fa-brands fa-whatsapp-square"></i>
+            </div>
+            <div>
+                <p class="copyright">  Copyright © 2022, Gordo Caldera </p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

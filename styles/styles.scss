@@ -8,8 +8,9 @@ $title_font: 'Cormorant SC', serif;
 }
 
 $palette:(
-    updown: #32174d,
-    background: linear-gradient(to bottom right, #42275a, #734b6d, #fb7ba2),
+    updown: #0d020f,
+    background: #160515,
+    info: linear-gradient(to right, #42275a, #734b6d, #42275a),
     font: aliceblue,
     button: #50404d);
 
@@ -38,6 +39,7 @@ $palette:(
     font-family: $title_font;
     font-weight: bold;
     font-size: larger;
+    text-align: center;
     }
 
     &__navbar {
@@ -99,33 +101,38 @@ $palette:(
              0px 8px 13px purple,
              0px 18px 23px rgba(0,0,0,0.1);
         transform: translateZ(60px);
+        @include textFormat();
     }
 
     &__p{
         padding: 50px;
-        text-align: right;
         text-justify: newspaper;
+        text-align: end;
+        font-size: medium;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
     }
     
     &__tagline {
         font-family: 'The Nautigal', cursive;
         font-size: xx-large;
+        margin: 10px;
+        @include textFormat;
     }
 }
 
 .index__cover{
     display: flex;
-    height: 250px;
-    width: 250 px;
+    height: auto;
+    width: 100%;
     margin: auto;
     align-items: center;
     text-align: center;
     text-justify: center;
-    background-image: url("../images/photos/cover.jpeg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    border-radius: 50%;
+    
+    &__video{
+        width: 100%;
+    }
 }    
 
 
@@ -139,15 +146,60 @@ $palette:(
         width:100%;
         font-family: $title_font; 
     }
+
     &__p{
         @include textFormat;
         width: 100%;
+        background-image: map-get($palette, info);
+        padding: 3%;
     }
 }
 
 .main__image{
     border-radius: 50%;    
 }
+
+.card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+
+    &__inner{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+
+            :hover{
+                    transform: rotateY(180deg);
+            }
+          }
+
+    &__front, &__back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+          }
+    
+        &__front{
+            background-color: #bbb;
+            color: black;
+        }
+
+        &__back{
+        background-color: map-get($palette, updown);
+        color: map-get($palette, font);
+        transform: rotateY(180deg);
+      }
+    
+    }
+  
 
 .container__card{
     grid-area: content;
@@ -209,7 +261,6 @@ $palette:(
     
 }
 
-
 .body__card_front{
     width: 100%;
     height: 100%;
@@ -246,12 +297,27 @@ $palette:(
     height: 200px;
     width: 150px;
     justify-self: center;
-
 }
+
 .card__container{
     padding: 20px 20px 20px 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: medium;
+}
+
+.carouselwrap{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+}
+
+.videoplayer{
+   width: 60%;
+   margin: auto;
+   overflow: hidden;
+   display: flex;
+   justify-content:center; 
 }
 
 .form{
@@ -294,16 +360,28 @@ $palette:(
         margin-top: 30px;
         padding: 10px;
         border-radius: 30px;
-        align-self: center;
+        justify-content: center;
     }
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer__general{
     grid-area: footer;
     color: map-get($palette, font);
     background-color: map-get($palette, updown);
-    text-align: center;
+    text-align: right;
+    font-size: large;
+    margin-top: 30px;
+    padding: 30px;
+}    
 
+.copyright{
+    text-align:left;
 }
 
 @media screen and (max-width: 600px) {
