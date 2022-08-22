@@ -31,7 +31,26 @@ $palette:(
     
     &__general{
         background-color: map-get($palette, updown);
+    
+        &__container{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+        
+            &__titleDiv{
+                align-self: flex-start;
+                margin-top:auto;
+                margin-bottom: auto;
+            }
+
+            &__navDiv{
+                align-self: flex-end;
+            }
+        }
+
+
     }
+
     
     &__title{ 
     grid-area: title;
@@ -131,6 +150,7 @@ $palette:(
     text-justify: center;
     
     &__video{
+        margin-top: 5%;
         width: 100%;
     }
 }    
@@ -457,3 +477,4 @@ $palette:(
         justify-content: space-evenly;
     }
 }
+

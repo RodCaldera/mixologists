@@ -18,6 +18,19 @@
 .header__general {
   background-color: #0d020f;
 }
+.header__general__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header__general__container__titleDiv {
+  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.header__general__container__navDiv {
+  align-self: flex-end;
+}
 .header__title {
   grid-area: title;
   padding: 20px;
@@ -105,6 +118,7 @@
   text-justify: center;
 }
 .index__cover__video {
+  margin-top: 5%;
   width: 100%;
 }
 
