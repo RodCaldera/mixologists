@@ -14,6 +14,7 @@
 .header {
   display: inline-flex;
   flex-direction: row;
+  height: 20vh;
 }
 .header__general {
   background-color: #0d020f;
@@ -43,14 +44,27 @@
   grid-area: nav;
   padding: 20px;
   font-family: "Cormorant SC", serif;
-  font-size: medium;
+  font-size: larger;
   text-align: center;
+}
+.header__navbar__checkbtn {
+  float: right;
+  font-size: xx-large;
+  line-height: 4vh;
+  padding-top: 2 vh;
+  padding-bottom: 2vh;
+  cursor: pointer;
+  display: none;
+}
+.header__navbar__checkbox {
+  display: none;
 }
 .header__navbar__ul {
   list-style-type: none;
   text-decoration: none;
   text-align: justify;
   display: inline-block;
+  margin-top: 5vh;
 }
 .header__navbar__ul__li {
   display: inline-block;
@@ -125,7 +139,6 @@
 .info {
   display: flex;
   flex-direction: column;
-  wrap: wrap;
 }
 .info__header {
   text-align: center;
@@ -145,144 +158,84 @@
   border-radius: 50%;
 }
 
-.card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-}
-.card__inner {
-  position: relative;
+.cardContainer {
   width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.card__inner :hover {
-  transform: rotateY(180deg);
-}
-.card__front, .card__back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-.card__front {
-  background-color: #bbb;
-  color: black;
-}
-.card__back {
-  background-color: #0d020f;
-  color: aliceblue;
-  transform: rotateY(180deg);
-}
-
-.container__card {
-  grid-area: content;
-  display: inline-flex;
-  flex-direction: row;
-  max-width: 1200px;
-  margin: auto;
-  margin-top: 100px;
-  perspective: 1000px;
-  padding: 10% 10% 10% 10%;
   display: flex;
-  align-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.card__father {
-  margin: auto;
-  width: 350px;
-  height: 400px;
+.flipCard {
+  perspective: 2000px;
+  padding: 5vh;
+  display: flex;
+  grid-gap: 5vh;
 }
 
-.card__father:hover .card {
-  transform: rotateY(180deg);
-}
-
-.card {
-  width: 350px;
-  height: 400px;
+.flipCardInner {
+  width: 25vh;
+  height: 35vh;
+  border-radius: 2rem;
   transform-style: preserve-3d;
-  transition: all 600ms;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 aquamarine;
+  transition: all 550ms;
+  position: relative;
 }
-
-.card__front,
-.card__back {
-  width: 100%;
+.flipCardInner__front {
   height: 100%;
+  width: 100%;
+  border-radius: inherit;
   position: absolute;
-  top: 0;
-  left: 0;
+  padding: 10%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  transform-style: preserve-3d;
-  border-radius: 30px;
 }
-
-.card__front {
-  width: 100%;
-  height: 100%;
-}
-
-.card__back {
-  transform: rotateY(180deg);
-  background: black;
-  padding: 40px;
-  text-align: center;
-}
-
-.body__card_front {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 40 px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.body__card_back {
-  margin-top: 30px;
-  font-size: 18px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding: 40 px;
-}
-
-.card {
-  grid-area: content;
-  width: 20%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.flipCardInner__front__img {
+  border-radius: inherit;
+  height: inherit;
+  width: inherit;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.card:hover {
-  size: 50%;
-  transition: 0.5seg;
-}
-
-.card__front_img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 200px;
-  width: 150px;
+.flipCardInner__front__title {
+  position: relative;
   justify-self: center;
+  align-self: center;
+  text-align: center;
 }
-
-.card__container {
-  padding: 20px 20px 20px 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: medium;
+.flipCardInner__back {
+  height: 100%;
+  width: 100%;
+  background-color: radial-gradient(ellipse at center, #AC47EF, #561882);
+  border-radius: inherit;
+  position: absolute;
+  padding: 10%;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  place-items: center;
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.flipCardInner__back__title {
+  font-family: "Cormorant SC", serif;
+  text-align: center;
+}
+.flipCardInner__back__text {
+  text-align: center;
+  text-align: center;
+  text-justify: newspaper;
+}
+.flipCardInner__back__button {
+  color: aliceblue;
+  background-color: black;
+  margin: 2vh;
+}
+.flipCardInner:hover {
+  transform: rotateY(-180deg);
 }
 
 .carouselwrap {
@@ -357,6 +310,12 @@
   text-align: left;
 }
 
+.icon {
+  font-size: medium;
+  text-decoration: none;
+  color: aliceblue;
+}
+
 @media screen and (max-width: 600px) {
   #grid {
     grid-template-rows: 17% auto 17%;
@@ -366,11 +325,46 @@
     justify-items: center;
     justify-content: space-evenly;
   }
-  .info {
-    display: flex;
-    flex-direction: column;
+  .header__navbar {
+    font-size: medium;
+  }
+  .header__navbar__checkbtn {
+    display: block;
+    font-size: medium;
+  }
+  .header__navbar__ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0d020f;
+    left: -100%;
+    text-align: center;
+    transition: all 5s;
+  }
+  .header__navbar__ul__li {
+    display: block;
+    margin: 50px 0px;
+    line-height: 30px;
+  }
+  .a {
+    font-size: large;
+  }
+  .a:hover {
+    background: #734b6d;
+    background: #734b6d;
+    padding: 20px;
+    text-decoration: none;
+    color: aliceblue;
+  }
+  #check:checked ~ .header__navbar__ul {
+    left: 0;
   }
 }
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (max-width: 768px) {
   #grid {
     grid-template-areas: "title" "nav" "content" "header" "p" "footer";
@@ -379,6 +373,39 @@
     grid-column-gap: 10 px;
     justify-items: stretch;
     justify-content: space-evenly;
+  }
+  .header__navbar {
+    font-size: medium;
+  }
+  .header__navbar__checkbtn {
+    display: block;
+    font-size: medium;
+  }
+  .header__navbar__ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0d020f;
+    left: -100%;
+    text-align: center;
+    transition: all 5s;
+  }
+  .header__navbar__ul__li {
+    display: block;
+    margin: 50px 0px;
+    line-height: 30px;
+  }
+  .a {
+    font-size: large;
+  }
+  .a:hover {
+    background: #734b6d;
+    padding: 20px;
+    text-decoration: none;
+    color: aliceblue;
+  }
+  #check:checked ~ .header__navbar__ul {
+    left: 0;
   }
   .info {
     display: flex;
@@ -391,11 +418,6 @@
   .info__p {
     width: 100%;
     grid-area: p;
-  }
-  .card__father {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 1200px) {
